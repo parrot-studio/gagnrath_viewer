@@ -13,7 +13,7 @@ Gagnrath( https://github.com/parrot-studio/gagnrath )で得たデータを一般
 
 Public Site
 ---------------
-http://parrot-studio.com/gimle/
+http://ro.parrot-studio.com/gimle
 
 ChangeLog
 ---------------

@@ -1,0 +1,27 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to("Wanna Be Free!! (for #{server_name})", root_path, :class => "brand") %>
+      <ul class="nav">
+        <li><%= link_to("Call Rankers", root_path) %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rulers <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <% @gvdates.each do |d| %>
+              <li><%= link_to divided_date(d), result_path(d) %></li>
+            <% end %>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Call Ranking <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <% @gvdates.each do |d| %>
+              <li><%= link_to divided_date(d), ranker_path(d) %></li>
+            <% end %>
+          </ul>
+        </li>
+        <li><%= link_to('About', about_path) %></li>
+      </ul>
+    </div>
+  </div>
+</div>

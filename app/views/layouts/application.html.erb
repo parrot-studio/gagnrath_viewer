@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <title>Wanna Be Free!! (for <%= server_name %>)</title>
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <%= render 'topnav' %>
+    <div class="container">
+      <div class="well">
+        <h1>Wanna Be Free!! <small>(for <%= server_name %>)</small></h1>
+        <p>- GvG Battlers of Ragnarok Online -</p>
+      </div>
+      <%= yield %>
+    </div>
+    <hr>
+    <% cache do %>
+      <footer>
+        <%= render 'footer' %>
+      </footer>
+    <% end %>
+  </body>
+</html>

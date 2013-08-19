@@ -1,0 +1,33 @@
+production:
+  env:
+    app_path:
+    secret_key_base: 
+    server_name: Gimle
+    gvtype: FE
+    data_size: 6
+  memcache:
+    server: localhost:11211
+    namespace: hoge
+    expire: 30
+development:
+  env:
+    app_path:
+    secret_key_base: 6e8821de824ebed019e81776e6cd50beb86e4a65890e8ebc68cdaed09e68c6080b0b6ce289b6a6f9829d3a1ae1de2c344bc050e988ac1e9b0d45e8db920ef157
+    server_name: Nounai
+    gvtype: FE
+    data_size: 6
+  memcache:
+    server: localhost:11211
+    namespace: devel
+    expire: 3
+test:
+  env:
+    app_path:
+    secret_key_base: 2c4970ab7a399c371963ed6b02befdf3a35e04930a6d6725fc5fc33fe05f5ef85ae6c58f361e8ed8de1d80455e2c256c955e718404b0c0c80fada42564f60eb9
+    server_name: SakrayJ
+    gvtype: FE
+    data_size: 6
+  memcache:
+    server: localhost:11211
+    namespace: test
+    expire: 1

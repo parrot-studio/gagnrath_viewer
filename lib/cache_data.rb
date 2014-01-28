@@ -17,7 +17,7 @@ class CacheData
 
     def call_rankers_for_all
       get_with_cache('call_rankers_for_all') do
-        gs = guild_result_for_all.take(10).map(&:guild_name)
+        gs = guild_result_for_all.take(20).map(&:guild_name)
         dates = result_dates
 
         rankers = {}

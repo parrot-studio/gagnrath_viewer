@@ -6,6 +6,11 @@ module ApplicationHelper
     ServerSettings.env.server_name
   end
 
+  def title_navs
+    return if @title_navs.blank?
+    [@title_navs].flatten.reject(&:blank?).reverse.inject(""){|s, n| s << "#{n} | " }
+  end
+
   def adsense
     path = File.join(Rails.root, 'tmp', 'adsence.txt')
     return '' unless File.exist?(path)

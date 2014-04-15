@@ -9,6 +9,28 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def title_navs
+    @title_navs ||= []
+    @title_navs
+  end
+
+  def add_navs(nav)
+    return if nav.blank?
+    title_navs << nav
+  end
+
+  def add_navs_for_date(date)
+    ds = [date].flatten.reject(&:blank?)
+    return if ds.empty?
+
+    nav = if ds.size == 1
+      divided_date(date)
+    else
+      "#{divided_date(ds.first)}-#{divided_date(ds.last)}"
+    end
+    add_navs(nav)
+  end
+
   def render_404
     render 'view/not_found', status: 404
   end

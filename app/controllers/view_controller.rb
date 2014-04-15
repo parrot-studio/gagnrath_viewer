@@ -1,4 +1,5 @@
 class ViewController < ApplicationController
+  include TimeUtil
 
   before_action do
     @gvdates = CacheData.result_dates
@@ -10,6 +11,7 @@ class ViewController < ApplicationController
   end
 
   def about
+    add_navs("このサイトについて")
   end
 
   def result
@@ -17,12 +19,16 @@ class ViewController < ApplicationController
     (render_404; return) unless @gvdates.include?(@gvdate)
     @guilds = CacheData.call_rankers_for(@gvdate)
     @rulers = CacheData.rulers_for(@gvdate)
+    add_navs("Rulers")
+    add_navs_for_date(@gvdate)
   end
 
   def ranker
     @gvdate = params[:date]
     (render_404; return) unless @gvdates.include?(@gvdate)
     @guilds = CacheData.call_rankers_for(@gvdate)
+    add_navs("Caller's Ranking")
+    add_navs_for_date(@gvdate)
   end
 
 end

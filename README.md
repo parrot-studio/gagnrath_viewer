@@ -7,7 +7,7 @@ Gagnrath( https://github.com/parrot-studio/gagnrath )で得たデータを一般
 以下の技術が使われています。
 
 - Ruby2.1
-- Rails4
+- Rails4.1
 - MariaDB
 - memcached
 
@@ -17,6 +17,10 @@ http://ro.parrot-studio.com/gimle
 
 ChangeLog
 ---------------
+#### ver2.0
+- Rails4.1に対応
+- ページtitleにナビゲーション情報を追加
+
 #### ver1.1
 - gemを更新
 - Ruby2.1で動作確認

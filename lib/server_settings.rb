@@ -11,11 +11,7 @@ class ServerSettings < Settingslogic
     end
 
     def secret_key_base
-      base = self.env.secret_key_base
-      if base.blank? || base.size < 30
-        raise 'You may not set "env.secret_key_base" setting. You need execute "rake secret", and add value.'
-      end
-      base
+      Rails.application.secrets
     end
 
     def gvtype
